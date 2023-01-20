@@ -239,20 +239,52 @@ label{
    </head>
 <body>
 
-   <?php
-    $db = new PDO('mysql:host=localhost;dbname=base;charset=utf8', 'root', '1234');
-    $Statement = $db->prepare('SELECT * FROM universites');
-    $Statement->execute();
-    $Statement = $Statement->fetchAll();
-
-   ?>
     <img src="logo_docker.PNG" alt="logo_projet">
     <h1>La liste des universités au Maroc</h1>
     <div  class="search__container">
       <input style="margin-left: 30%; padding-left:35px;" class="search__input" type="text" placeholder="Chercher une université">
     </div> 
     <ul class="cards">
+    <li class="cards__item">
+               <div class="card">
+                    <div class="card__image card__image--fence"><img src="mohamed5.PNG"></div>
+                    <div class="card__content">
+                         <div class="card__title">universite mohamed 5</div>
+                         <p class="card__text">Informatique et IT</p>
+           
+                     </div>
+               </div>
+      
+          </li>
+          <li class="cards__item">
+               <div class="card">
+                    <div class="card__image card__image--fence"><img src="kadi.PNG"></div>
+                    <div class="card__content">
+                         <div class="card__title">universite AL kadi Ayad</div>
+                         <p class="card__text">Litterature francaise</p>
+           
+                     </div>
+               </div>
+      
+          </li>
+          <li class="cards__item">
+               <div class="card">
+                    <div class="card__image card__image--fence"><img src="uir.PNG"></div>
+                    <div class="card__content">
+                         <div class="card__title">universite  Rabat</div>
+                         <p class="card__text">Mathematiques Appliquees</p>
+           
+                     </div>
+               </div>
+      
+          </li>
        <?php
+  
+   $db = new PDO('mysql:host=localhost;dbname=base;charset=utf8', 'root', '1234');
+   $Statement = $db->prepare('SELECT * FROM universites');
+   $Statement->execute();
+   $Statement = $Statement->fetchAll();
+
       foreach($Statement as $elem){?>
           <li class="cards__item">
                <div class="card">
